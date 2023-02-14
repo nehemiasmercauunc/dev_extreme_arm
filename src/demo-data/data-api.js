@@ -1,0 +1,170 @@
+const dataApi = [
+    {
+        "idSeguro": "1200000008",
+        "nombreSeguro": "SMG",
+        "idCliente": "300000776",
+        "nombreCliente": "RADIO VICTORIA S.A.",
+        "idSubCliente": "1400000472",
+        "nombreSubCliente": "RADIO VICTORIA S.A.",
+        "alertasFallasYExcesos": [
+            {
+                "idSeguro": "1200000008",
+                "nombreSeguro": "SMG",
+                "nombreSeguroEnCliente": null,
+                "idCliente": "300000776",
+                "clienteNombre": "RADIO VICTORIA S.A.",
+                "idSubcliente": "1400000472",
+                "subclienteNombre": "RADIO VICTORIA S.A.",
+                "idServicio": "100050257",
+                "fechaTransito": "0001-01-01T00:00:00",
+                "patente": "MIM192",
+                "transportista": null,
+                "origen": null,
+                "destino": null,
+                "montoTransportado": null,
+                "mercaderia": null,
+                "medidasSeguridadValidada": null,
+                "medidasSeguridadRecomendada": null,
+                "exceso": null,
+                "responsabilidadMaxima": 0
+            },
+            {
+                "idSeguro": "1200000008",
+                "nombreSeguro": "SMG",
+                "nombreSeguroEnCliente": null,
+                "idCliente": "300000776",
+                "clienteNombre": "RADIO VICTORIA S.A.",
+                "idSubcliente": "1400000472",
+                "subclienteNombre": "RADIO VICTORIA S.A.",
+                "idServicio": "100050255",
+                "fechaTransito": "0001-01-01T00:00:00",
+                "patente": "ADD539",
+                "transportista": null,
+                "origen": null,
+                "destino": null,
+                "montoTransportado": null,
+                "mercaderia": null,
+                "medidasSeguridadValidada": null,
+                "medidasSeguridadRecomendada": null,
+                "exceso": null,
+                "responsabilidadMaxima": 0
+            }
+        ]
+    },
+    {
+        "idSeguro": "1200000008",
+        "nombreSeguro": "SMG",
+        "idCliente": "300000776",
+        "nombreCliente": "RADIO VICTORIA S.A.",
+        "idSubCliente": "1400000787",
+        "nombreSubCliente": "RVF: EXCESOS",
+        "alertasFallasYExcesos": [
+            {
+                "idSeguro": "1200000008",
+                "nombreSeguro": "SMG",
+                "nombreSeguroEnCliente": null,
+                "idCliente": "300000776",
+                "clienteNombre": "RADIO VICTORIA S.A.",
+                "idSubcliente": "1400000787",
+                "subclienteNombre": "RVF: EXCESOS",
+                "idServicio": "100050258",
+                "fechaTransito": "0001-01-01T00:00:00",
+                "patente": "",
+                "transportista": null,
+                "origen": null,
+                "destino": null,
+                "montoTransportado": null,
+                "mercaderia": null,
+                "medidasSeguridadValidada": null,
+                "medidasSeguridadRecomendada": null,
+                "exceso": null,
+                "responsabilidadMaxima": 0
+            }
+        ]
+    },
+    {
+        "idSeguro": "1200000014",
+        "nombreSeguro": "Meridional",
+        "idCliente": "300000003",
+        "nombreCliente": "CARREFOUR S.A.",
+        "idSubCliente": "1400000788",
+        "nombreSubCliente": "CARREFOUR S.A.",
+        "alertasFallasYExcesos": [
+            {
+                "idSeguro": "1200000014",
+                "nombreSeguro": "Meridional",
+                "nombreSeguroEnCliente": null,
+                "idCliente": "300000003",
+                "clienteNombre": "CARREFOUR S.A.",
+                "idSubcliente": "1400000788",
+                "subclienteNombre": "CARREFOUR S.A.",
+                "idServicio": "100050256",
+                "fechaTransito": "0001-01-01T00:00:00",
+                "patente": "",
+                "transportista": null,
+                "origen": null,
+                "destino": null,
+                "montoTransportado": null,
+                "mercaderia": null,
+                "medidasSeguridadValidada": null,
+                "medidasSeguridadRecomendada": null,
+                "exceso": null,
+                "responsabilidadMaxima": 0
+            },
+            {
+                "idSeguro": "1200000014",
+                "nombreSeguro": "Meridional",
+                "nombreSeguroEnCliente": null,
+                "idCliente": "300000003",
+                "clienteNombre": "CARREFOUR S.A.",
+                "idSubcliente": "1400000788",
+                "subclienteNombre": "CARREFOUR S.A.",
+                "idServicio": "100050251",
+                "fechaTransito": "0001-01-01T00:00:00",
+                "patente": "JKL873",
+                "transportista": null,
+                "origen": null,
+                "destino": null,
+                "montoTransportado": null,
+                "mercaderia": null,
+                "medidasSeguridadValidada": null,
+                "medidasSeguridadRecomendada": null,
+                "exceso": null,
+                "responsabilidadMaxima": 0
+            }
+        ]
+    },
+    {
+        "idSeguro": "1200000005",
+        "nombreSeguro": "Berkley",
+        "idCliente": "300002835",
+        "nombreCliente": "PRUEBA 3",
+        "idSubCliente": "1400000790",
+        "nombreSubCliente": "RODRI PRUEBA",
+        "alertasFallasYExcesos": [
+            {
+                "idSeguro": "1200000005",
+                "nombreSeguro": "Berkley",
+                "nombreSeguroEnCliente": null,
+                "idCliente": "300002835",
+                "clienteNombre": "PRUEBA 3",
+                "idSubcliente": "1400000790",
+                "subclienteNombre": "RODRI PRUEBA",
+                "idServicio": "100050250",
+                "fechaTransito": "0001-01-01T00:00:00",
+                "patente": "ADD539",
+                "transportista": null,
+                "origen": null,
+                "destino": null,
+                "montoTransportado": null,
+                "mercaderia": null,
+                "medidasSeguridadValidada": null,
+                "medidasSeguridadRecomendada": null,
+                "exceso": null,
+                "responsabilidadMaxima": 0
+            }
+        ]
+    }
+]
+
+export default dataApi;

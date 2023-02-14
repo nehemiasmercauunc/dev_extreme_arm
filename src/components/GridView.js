@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import {
     Plugin, Template, TemplateConnector, TemplatePlaceholder,
@@ -41,18 +41,23 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import MuiGrid from '@mui/material/Grid';
 
-
 import useRows from '../hooks/useRows';
 import useColumns from '../hooks/useColumns';
 import useColumnsWidths from '../hooks/useColumnsWidths';
 import useSorting from '../hooks/useSorting';
+import useModal from '../hooks/useModal';
 
-import { EditButton, DeleteButton } from '../components/Buttons';
+// import { EditButton, DeleteButton } from '../components/Buttons';
+import EditButton from '../components/EditButton';
+import DeleteButton from '../components/DeleteButton';
+import ModalForm from '../components/ModalForm';
 
 import {
     generateRows,
     defaultColumnValues
 } from '../demo-data/generator';
+
+import Swal from 'sweetalert2';
 
 
 const Popup = ({
@@ -192,8 +197,6 @@ const PopupEditing = React.memo(({ popupComponent: Popup }) => (
     </Plugin>
 ));
 
-
-
 const getRowId = row => row.id;
 
 const getChildRows = (row, rootRows) => {
@@ -201,8 +204,11 @@ const getChildRows = (row, rootRows) => {
     return childRows.length ? childRows : null;
 };
 
-
 const GridView = () => {
+
+    
+
+    const [show, handleShow, handleClose] = useModal();
 
     const [columns] = useColumns();
 
@@ -214,6 +220,8 @@ const GridView = () => {
         },
         length: 20
     }))
+
+    console.log("rows", rows)
 
     const [columnWidths, setColumnWidths] = useColumnsWidths()
 
@@ -235,6 +243,7 @@ const GridView = () => {
         setRows(rows.map(r => r.id === row.id ? { ...r, checkEnviar: !row.checkEnviar } : r));
     };
 
+
     const CellComponent = ({ children, row, ...restProps }) => (
         <TableEditColumn.Cell row={row} {...restProps} >
             {children}
@@ -243,7 +252,8 @@ const GridView = () => {
                 text="Enviar"
                 className="btn"
                 onExecute={() => {
-                    showDetails(row);
+                    handleShow();
+                    // showDetails(row);
                 }}
             />
             }
@@ -300,8 +310,6 @@ const GridView = () => {
         setRows(changedRows);
     };
 
-
-
     const commandComponents = {
         edit: EditButton,
         delete: DeleteButton,
@@ -317,53 +325,56 @@ const GridView = () => {
     };
 
     return (
-        <Paper>
-            <Grid
-                rows={rows}
-                columns={columns}
-                getRowId={getRowId}
-            >
-                <SearchState value={searchValue} onValueChange={setSearchState} />
-                <SortingState sorting={sorting} onSortingChange={setSorting} />
-                <IntegratedSorting />
-                <IntegratedFiltering />
+        <>
+            <ModalForm show={show} handleShow={handleShow} handleClose={handleClose} />
+            <Paper>
+                <Grid
+                    rows={rows}
+                    columns={columns}
+                    getRowId={getRowId}
+                >
+                    <SearchState value={searchValue} onValueChange={setSearchState} />
+                    <SortingState sorting={sorting} onSortingChange={setSorting} />
+                    <IntegratedSorting />
+                    <IntegratedFiltering />
 
-                <SelectionState />
-                <TreeDataState
-                    defaultExpandedRowIds={defaultExpandedRowIds}
-                />
-                <CustomTreeData
-                    getChildRows={getChildRows}
-                />
-                <IntegratedSelection />
-                <EditingState
-                    onCommitChanges={commitChanges}
-                />
-                <Table
-                />
-                <TableColumnResizing
-                    columnWidths={columnWidths}
-                    onColumnWidthsChange={setColumnWidths}
-                />
-                <TableHeaderRow
-                    showSortingControls
-                />
-                <TableTreeColumn
-                    for="check"
-                    cellComponent={CellComponentCheck}
-                />
-                <TableEditColumn
-                    cellComponent={CellComponent}
-                    showEditCommand
-                    showDeleteCommand
-                    commandComponent={Command}
-                    width={200}
-                />
-                <Toolbar />
-                <SearchPanel />
-                <PopupEditing popupComponent={Popup} />
-            </Grid>
-        </Paper>
+                    <SelectionState />
+                    <TreeDataState
+                        defaultExpandedRowIds={defaultExpandedRowIds}
+                    />
+                    <CustomTreeData
+                        getChildRows={getChildRows}
+                    />
+                    <IntegratedSelection />
+                    <EditingState
+                        onCommitChanges={commitChanges}
+                    />
+                    <Table
+                    />
+                    <TableColumnResizing
+                        columnWidths={columnWidths}
+                        onColumnWidthsChange={setColumnWidths}
+                    />
+                    <TableHeaderRow
+                        showSortingControls
+                    />
+                    <TableTreeColumn
+                        for="check"
+                        cellComponent={CellComponentCheck}
+                    />
+                    <TableEditColumn
+                        cellComponent={CellComponent}
+                        showEditCommand
+                        showDeleteCommand
+                        commandComponent={Command}
+                        width={200}
+                    />
+                    <Toolbar />
+                    <SearchPanel />
+                    <PopupEditing popupComponent={Popup} />
+                </Grid>
+            </Paper>
+        </>
     )
 }
 

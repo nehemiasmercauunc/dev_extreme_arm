@@ -1,4 +1,4 @@
-import Alert from './components/Alert';
+import Menu from './components/Menu';
 import Card from './components/Card';
 import GridView from './components/GridView';
 
@@ -9,7 +9,7 @@ const demo = () => {
     <div className='container-fluid' style={{ marginTop: '20px' }}>
       <div className='row'>
         <div className='col-12'>
-          <Alert />
+          <Menu />
         </div>
       </div>
       <div className='row'>

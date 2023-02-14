@@ -1,4 +1,4 @@
-const Alert = () => {
+const Menu = () => {
     return (
         <div className="alert alert-success text-white bg-success" role="alert">
         <div className='row'>
@@ -21,4 +21,4 @@ const Alert = () => {
     )
 }
 
-export default Alert
+export default Menu
